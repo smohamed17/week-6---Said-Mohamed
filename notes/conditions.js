@@ -1,3 +1,5 @@
+// booleans and figuring things out. 
+
 let takenCSharp = false
 let takenJava = false
 
@@ -24,4 +26,5 @@ if (null === 0){
     console.log('the same!')
 } else {
     console.log('not the same!')
+
 }
