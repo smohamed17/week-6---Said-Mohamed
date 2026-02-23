@@ -1,3 +1,5 @@
+//adding different types of arrays and ideas. 
+
 let animals = ['lion', 'tiger', 'cheetah']
 console.log(animals)
 console.log(animals[1])
@@ -61,3 +63,4 @@ animals.forEach(function(animal) {
     animalsNameLeng.push(length)
 })
 console.log(animalsNameLeng)
+
