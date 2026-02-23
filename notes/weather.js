@@ -81,4 +81,7 @@ weatherDescriptionArray.forEach( function(weatherDescription) {
 })
 
 let descriptionString = descriptions.join(' , ')
+
 console.log('The weather is ' + descriptionString)
+
+// this is using pre-built code and figuring out strings, booleans, objects, arrays, and functions.
