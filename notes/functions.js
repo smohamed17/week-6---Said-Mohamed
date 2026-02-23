@@ -1,3 +1,5 @@
+// adding all types of functions.
+
 function shout(text) {
     let shouty_text = text.toUpperCase() + '!!!!'
     return shouty_text
@@ -52,4 +54,5 @@ console.log(testingGPA(2.5))
 console.log(testingGPA(4.1))
 console.log(testingGPA(-3))
 console.log(testingGPA(4))
+
 
