@@ -13,4 +13,6 @@ user.salary = 45000
 user.roles.push('server admin')
 
 user.contact.location = 'San Diego'
+
 console.log(user)
+// using roles to create objects.
