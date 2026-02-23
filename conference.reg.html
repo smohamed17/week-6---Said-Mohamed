@@ -150,12 +150,11 @@
             error.push('Please enter a valid date of birth.');
         }
 
-        let receiveEmail
 
         if (receive1RegInput.checked){
-            receiveEmail = true
+            return true
         }else if (receive2RegInput.checked){
-            receiveEmail = false
+            return false
         }else {
             error.push('Select the two options below!');
         }
@@ -194,4 +193,5 @@
 
 </script>
 </body>
+
 </html>
