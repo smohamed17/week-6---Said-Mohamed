@@ -8,4 +8,6 @@ console.log(replacedAll)
 
 let message = 'The classes are 1150, 1250, 2560'
 let replaceRegex = message.replace(/\d{4}/g, 'ITEC $&')
+
 console.log(replaceRegex)
+// focusing on strings.
