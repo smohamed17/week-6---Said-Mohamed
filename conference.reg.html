@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conference Registration Form</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Playfair+Display&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <link href="registration.css" rel="stylesheet" type="text/css">
+
+</head>
+<body class="mb-auto p-2" style="height: 50px;">
+
+<div class="bg-secondary-subtle mx-3 mb-3 p-5 rounded-4 text-center">
+    <h1>Conference Registration Form 2026</h1>
+</div>
+
+<div class="row">
+    <!--- First column/Instructions --->
+    <div class="col">
+        <h2>Instructions for the form.</h2>
+
+        <p>Please complete the form below with the best of your ability and available.</p>
+        <p>This will need to be completed two days before the conference begins.</p>
+        <p>If you have any questions, please contact us as soon as possible.</p>
+
+    </div>
+    <!--- Second column/Form --->
+    <div class="col">
+
+
+
+        <br>
+
+        <label class="form-label" for="entering-name">Enter Name:</label>
+        <input class="mb-1 rounded-4 form-control" id="entering-name" type="text" maxlength="70" required>
+
+        <br>
+        <label class="form-label" for="entering-password">Password</label>
+        <input class="mb1 rounded-4 form-control" type="password" id="entering-password" required>
+
+        <br>
+        <label class="form-label" for="entering-email">Email Address:</label>
+        <input class="mb-1 rounded-4 form-control" id="entering-email"  placeholder="name@example.com" type="text" required>
+
+
+        <br>
+
+        <label class="form-label" for="t-shirt-size">T-Shirt size:</label>
+        <select class="mb-1 rounded-4 form-select" id="t-shirt-size" required>
+            <option selected>Select an option</option>
+            <option value="1">Small</option>
+            <option value="2">Medium</option>
+            <option value="3">Large</option>
+        </select>
+
+        <br>
+
+        <label class="form-label" for="d-o-b">Date of Birth</label>
+        <input class="mb-1 rounded-4 form-control" type="date" id="d-o-b" required>
+
+        <br>
+
+        <label class="my-1 m-1 p-2">Receive email updates?</label>
+        <div class="form-check">
+            <input class="form-check-input" id="yes-to-email" name="email-updates" type="radio" checked>
+            <label class="btn btn-outline-light form-check-label" for="yes-to-email">Yes</label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" id="no-to-email" name="email-updates" type="radio">
+            <label class="btn btn-outline-light form-check-label" for="no-to-email">No</label>
+        </div>
+        <br>
+
+        <label class="form-check-label" for="attendance"> Which session are you attending? </label>
+        <div class="btn-outline-success" role="group">
+
+            <input type="checkbox" class="btn-outline-success" id="attendance" autocomplete="off">
+            <label class="btn btn-outline-light" for="attendance">Morning Session</label>
+
+            <input type="checkbox" class="btn-outline-success" id="attendance2" autocomplete="off">
+            <label class="btn btn-outline-light" for="attendance2">Afternoon Session</label>
+
+            <input type="checkbox" class="btn-outline-success" id="attendance3" autocomplete="off">
+            <label class="btn btn-outline-light" for="attendance3">Both</label>
+        </div>
+        <br>
+
+        <label class="form-label" for="special-request">Any Special Request:</label>
+        <textarea class="mb-1 rounded-2 form-control" id="special-request" rows="7" cols="70"></textarea>
+
+        <br>
+        <button id="submit-registration-button">Submit your registration</button>
+
+
+    </div>
+</div>
+
+<script>
+    let submitRegButton = document.querySelector('#submit-registration-button');
+    let nameRegInput = document.querySelector('#entering-name');
+    let passwordRegInput = document.querySelector('#entering-password');
+    let emailRegInput = document.querySelector('#entering-email');
+    let shirtSizeRegInput = document.querySelector('#t-shirt-size');
+    let dateRegInput = document.querySelector('#d-o-b');
+    let receive1RegInput = document.querySelector('#yes-to-email');
+    let receive2RegInput = document.querySelector('#no-to-email');
+    let attendanceRegInput = document.querySelectorAll('#attendance');
+    let specialRegInput = document.querySelector('#special-request');
+
+    submitRegButton.addEventListener('click', function () {
+
+
+// todo check all other inputs, email, passsword, and others.
+        let error = []
+
+        let entername = nameRegInput.value
+        if (!entername) {
+            error.push('Please enter a name.');
+            console.log(entername)
+        }
+
+        let password = passwordRegInput.value;
+        if (!password) {
+            error.push('Please enter the password.')
+            console.log(password)
+        }
+
+        let email = emailRegInput.value;
+        if (!email) {
+            error.push('Please enter a valid email.')
+            console.log(email)
+        }
+
+        let tShirtSize = shirtSizeRegInput.value;
+        console.log(' shirt size selected ' + tShirtSize)
+
+        if (!tShirtSize) {
+            error.push(tShirtSize)
+        }
+
+        let date = dateRegInput.value;
+        if (!date) {
+            error.push('Please enter a valid date of birth.');
+        }
+
+
+        if (receive1RegInput.checked){
+            return true
+        }else if (receive2RegInput.checked){
+            return false
+        }else {
+            error.push('Select the two options below!');
+        }
+
+        let attendance = []
+        attendanceRegInput.forEach(function(attend) {
+            attendance.push(attend.value)
+        })
+
+        if (attendance.length === 0){
+            error.push('Please select the following attendance sessions.')
+        }
+
+        let special = specialRegInput.value
+        console.log(special)
+
+
+        if (error.length > 0) {
+            let errorMsg = error.join('\n')
+            alert(errorMsg)
+        }
+    })
+
+    let register = {
+        name: "",
+        password: "",
+        email: "",
+        tShirtSize: "",
+        date: "",
+        receivedEmail: "",
+        attendance: "",
+        specialReq: ""
+    }
+
+    console.log(register)
+
+</script>
+</body>
+</html>
